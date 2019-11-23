@@ -67,7 +67,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bbtb3f000064nre9sza80j"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bgpkdw0000sonr9oqz4qi4"
          class="article-share-link">分享</a>
       
     </footer>
@@ -77,6 +77,15 @@
   
     
   <nav class="article-nav">
+    
+      <a href="/2019/11/23/CSS%20Clip%20Clip-path/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            CSS Clip Clip-path
+          
+        </div>
+      </a>
     
     
       <a href="/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" class="article-nav-link">
@@ -91,6 +100,26 @@
 
   
     
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
   
 
 </article>

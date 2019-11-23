@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    你好 |
+    CSS Clip Clip-path |
     
     Xcl&#39;sBlog</title>
   
@@ -25,7 +25,7 @@
   <section class="outer">
   
 
-<article id="post-你好" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-CSS Clip Clip-path" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -33,7 +33,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      你好
+      CSS Clip Clip-path
     </h1>
   
   
@@ -46,8 +46,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/11/23/%E4%BD%A0%E5%A5%BD/" class="article-date">
-  <time datetime="2019-11-23T03:13:18.000Z" itemprop="datePublished">2019-11-23</time>
+        <a href="/2019/11/23/CSS%20Clip%20Clip-path/" class="article-date">
+  <time datetime="2019-11-23T08:58:33.926Z" itemprop="datePublished">2019-11-23</time>
 </a>
         
       </div>
@@ -62,11 +62,22 @@
       
 
       
-        
+        <blockquote>
+<blockquote>
+<blockquote>
+<p><a href="https://www.quackit.com/css/properties/css_clip.cfm" target="_blank" rel="noopener">CSS Clip官方API</a><br> <strong>该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>所有主流浏览器都支持 clip 属性。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>clip 属性定义了元素的哪一部分是可见的。clip 属性只适用于 position:absolute 的元素。</p>
+<h2 id="警告：这个属性已被废弃。建议使用-clip-path-。"><a href="#警告：这个属性已被废弃。建议使用-clip-path-。" class="headerlink" title="警告：这个属性已被废弃。建议使用 clip-path 。"></a>警告：这个属性已被废弃。建议使用 clip-path 。</h2><h1 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h1><p>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
+<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BD%A0%E5%A5%BD/" data-id="ck3bbtbey000164nr1eghhfav"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck3bgpkp10004sonr2ysd669q"
          class="article-share-link">分享</a>
       
     </footer>
@@ -77,19 +88,10 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            什么是圣杯布局和双飞翼布局？
-          
-        </div>
-      </a>
     
-    
-      <a href="/2019/11/23/hello-world/" class="article-nav-link">
+      <a href="/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">Hello World</div>
+        <div class="article-nav-title">CSS Grid 网格</div>
       </a>
     
   </nav>
@@ -99,6 +101,26 @@
 
   
     
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
   
 
 </article>

@@ -59,6 +59,76 @@
       
         
 
+<article id="post-CSS Clip Clip-path" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/11/23/CSS%20Clip%20Clip-path/">CSS Clip Clip-path</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/11/23/CSS%20Clip%20Clip-path/" class="article-date">
+  <time datetime="2019-11-23T08:58:33.926Z" itemprop="datePublished">2019-11-23</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <blockquote>
+<blockquote>
+<blockquote>
+<p><a href="https://www.quackit.com/css/properties/css_clip.cfm" target="_blank" rel="noopener">CSS Clip官方API</a><br> <strong>该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>所有主流浏览器都支持 clip 属性。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>clip 属性定义了元素的哪一部分是可见的。clip 属性只适用于 position:absolute 的元素。</p>
+<h2 id="警告：这个属性已被废弃。建议使用-clip-path-。"><a href="#警告：这个属性已被废弃。建议使用-clip-path-。" class="headerlink" title="警告：这个属性已被废弃。建议使用 clip-path 。"></a>警告：这个属性已被废弃。建议使用 clip-path 。</h2><h1 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h1><p>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
+<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck3bgpkp10004sonr2ysd669q"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
 <article id="post-CSS Grid 网格" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
@@ -101,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bbtb3f000064nre9sza80j"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bgpkdw0000sonr9oqz4qi4"
          class="article-share-link">分享</a>
       
     </footer>
@@ -156,20 +226,81 @@
       
 
       
-        <h1 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h1><p>（1）GitHub账号<br>在GitHub首页注册github账号，一定要牢记你的Username，后面会用到。<br>（2）GitHub客户端</p>
-<hr>
-<h1 id="2-开始搭建打开GitHub客户端，登录你的账号。"><a href="#2-开始搭建打开GitHub客户端，登录你的账号。" class="headerlink" title="2. 开始搭建打开GitHub客户端，登录你的账号。"></a>2. 开始搭建打开GitHub客户端，登录你的账号。</h1><p>（1）点击界面左上角File选项，点击New repository。</p>
-<p>（2）填写相关信息，点击“Create repository”创建一个仓库。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在填写新建信息的过程中，填写Name时需要注意，与Username保持一致，并在Username后加上“.github.io”的后缀。如上图，我的Username是“lzu-blockly”，故新建的“Repository name”为“lzu-blockly.github.io”。其次，记住你所选择的本地路径（Local path）。</span><br></pre></td></tr></table></figure>
-<p>（3）打开本地路径，如果操作无误，应该可以看到由GitHub创建的本地的文件“Username.github.io”：</p>
-<p>（4）返回GitHub客户端界面，可以看到“Changes”中很多选项：<br>     填写左下角的简介和描述，填写完成之后点击“Commit to master”。</p>
-<p>（5）点击GitHub客户端界面上方中部的“Publish repository”。</p>
-<p>（6）打开浏览器，在地址栏输入Username.github.io，即可访问你的主页，如下图lzu-blockly.github.io</p>
+        <p>一、Nodejs环境、git环境安装</p>
+<p>注：本教程不做Nodejs、git环境的安装，如未安装，请自行百度</p>
+<p>Nodejs官网</p>
+<p>git官网</p>
+<p>二、Hexo安装</p>
+<p>hexo官网</p>
+<p>安装Hexo</p>
+<p>npm install hexo-cli -g #安装hexo模块<br>hexo init blog #通过hexo创建一个blog项目<br>cd blog<br>npm install<br>hexo server #开发服务</p>
+<p>注：本文不涉及hexo全部方法，如需更多操作请自行学习</p>
+<p>hexo文档</p>
+<p>三、使用github pages</p>
+<p>github pages是给开发者建立一个私人页面，免费且没有空间流量限制。每个github账号都可以创建一个github pages项目</p>
+<p>创建github pages项目</p>
+<p>在github上新建一个项目，项目的名称必须是（你的用户名.github.io)才行</p>
+<p>点击创建<br>四、配置git信息(方便hexo和github通过ssh通信)</p>
+<p>1、设置Git的user name和email：(如果是第一次的话)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"寻未四叔"</span></span><br><span class="line">git config --global user.email <span class="string">"598471284@qq.com"</span></span><br></pre></td></tr></table></figure>
+
+
+<p>查看是否配置成功</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p>2、生成密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的注册github的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>在/Users/raodaqi/.ssh/目录下会生成两个文件id_rsa和id_rsa.pub</p>
+<p>将id_rsa.pub里的内容配置到github项目的Deploy keys里</p>
+<p>五、配置Deployment</p>
+<p>在blog项目根目录下里找到_config.yml文件，找到Deployment，然后按照如下修改：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+
+<p>比如我的仓库的地址是<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:raodaqi/raodaqi.github.io.git，所以配置如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:raodaqi/raodaqi.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<p>六、安装 hexo-deployer-git自动部署发布工具</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>七、生成静态文件部署到github</p>
+<p>通过命令hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，发布到github</p>
+<ul>
+<li>1.hexo clean </li>
+<li>2.hexo g </li>
+<li>3.hexo d</li>
+</ul>
+<p>通过链接就可以进行访问：你github用户名.github.io</p>
+<p>八、更改模板，发布博客</p>
+<p>更改模板以及发布博客请自行学习<br>hexo模块</p>
+<p>hexo写作教程</p>
+<p>更换主题教程：</p>
+<p>更换 Hexo 主题非常容易，只要在 themes 文件夹内，新增一个任意名称的文件夹，并修改 _config.yml 内的 theme 设定，即可切换主题。</p>
+<ul>
+<li>1.在终端 cd 到你的博客根目录</li>
+</ul>
+<p>输入命令： git clone 刚才复制的地址 themes/xxxx ，xxxx 是主题名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/theme-next/hexo-theme-next.git themes/next</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.使用主题<br>修改博客根目录下的 _config.yml 文件，注释掉原来的 theme 并新增一句 theme: xxxx （注意冒号后面有空格）</li>
+</ul>
+<p>xxxx 为博客根目录 themes/ 文件夹下，对应的主题文件夹名称。</p>
+<p>如果是解压出来的“hexo-theme-aircloud”就写“hexo-theme-aircloud”，如果是自建的“aircloud”就写“aircloud”</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck3bbtbgb000264nrak5w4x1x"
+      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck3bgpkmw0001sonr1k843u7a"
          class="article-share-link">分享</a>
       
     </footer>
@@ -259,7 +390,7 @@
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.column</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#footer</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h6 id="question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"><a href="#question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？" class="headerlink" title="question 如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"></a>question 如果去掉额外添加的<div>标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？</h6><ul>
+<h3 id="question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"><a href="#question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？" class="headerlink" title="question 如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"></a>question 如果去掉额外添加的<div>标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？</h3><ul>
 <li><p>1.flex 布局</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--DOM结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="selector-id">#container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -273,66 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck3bbtbgf000364nr7vfjcn3t"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-你好" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/%E4%BD%A0%E5%A5%BD/">你好</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/%E4%BD%A0%E5%A5%BD/" class="article-date">
-  <time datetime="2019-11-23T03:13:18.000Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BD%A0%E5%A5%BD/" data-id="ck3bbtbey000164nr1eghhfav"
+      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck3bgpknb0002sonr9ogmhkca"
          class="article-share-link">分享</a>
       
     </footer>
@@ -404,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck3bbtbgj000464nr2h0h8apv"
+      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck3bgpkne0003sonr4ayde2di"
          class="article-share-link">分享</a>
       
     </footer>
