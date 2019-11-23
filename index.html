@@ -106,12 +106,18 @@
 <h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>所有主流浏览器都支持 clip 属性。</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>clip 属性定义了元素的哪一部分是可见的。clip 属性只适用于 position:absolute 的元素。</p>
 <h2 id="警告：这个属性已被废弃。建议使用-clip-path-。"><a href="#警告：这个属性已被废弃。建议使用-clip-path-。" class="headerlink" title="警告：这个属性已被废弃。建议使用 clip-path 。"></a>警告：这个属性已被废弃。建议使用 clip-path 。</h2><h1 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h1><p>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
-<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
+<p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
+<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/* Keyword values */</span><br><span class="line">clip-path: none;</span><br><span class="line"></span><br><span class="line">/* &lt;clip-source&gt; values */ </span><br><span class="line">clip-path: url(resources.svg#c1);</span><br><span class="line"></span><br><span class="line">/* &lt;geometry-box&gt; values */</span><br><span class="line">clip-path: margin-box;</span><br><span class="line">clip-path: border-box;</span><br><span class="line">clip-path: padding-box;</span><br><span class="line">clip-path: content-box;</span><br><span class="line">clip-path: fill-box;</span><br><span class="line">clip-path: stroke-box;</span><br><span class="line">clip-path: view-box;</span><br><span class="line"></span><br><span class="line">/* &lt;basic-shape&gt; values */</span><br><span class="line">clip-path: inset(100px 50px);</span><br><span class="line">clip-path: circle(50px at 0 100px);</span><br><span class="line">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</span><br><span class="line">clip-path: path(&apos;M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z&apos;);</span><br><span class="line"></span><br><span class="line">/* Box and shape values combined */</span><br><span class="line">clip-path: padding-box circle(50px at 0 100px);</span><br><span class="line"></span><br><span class="line">/* Global values */</span><br><span class="line">clip-path: inherit;</span><br><span class="line">clip-path: initial;</span><br><span class="line">clip-path: unset;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck3bgpkp10004sonr2ysd669q"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck3bj4vqk0000qwnrdjiu4dar"
          class="article-share-link">分享</a>
       
     </footer>
@@ -171,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bgpkdw0000sonr9oqz4qi4"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3bj4vr40001qwnrai19chhp"
          class="article-share-link">分享</a>
       
     </footer>
@@ -300,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck3bgpkmw0001sonr1k843u7a"
+      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck3bj4vra0002qwnr9j17hceo"
          class="article-share-link">分享</a>
       
     </footer>
@@ -404,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck3bgpknb0002sonr9ogmhkca"
+      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck3bj4vrk0004qwnrclyf28v5"
          class="article-share-link">分享</a>
       
     </footer>
@@ -476,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck3bgpkne0003sonr4ayde2di"
+      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck3bj4vre0003qwnrhnjr8dzr"
          class="article-share-link">分享</a>
       
     </footer>
