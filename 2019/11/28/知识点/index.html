@@ -7,6 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
+    知识点 |
     
     Xcl&#39;sBlog</title>
   
@@ -21,43 +22,8 @@
 
 <body>
 <main class="content">
-  <section class="jumbotron">
-  <div class="video">
-    
-      <div class="video-frame">
-        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
-      </div>
-    
-    <div class="video-media">
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
-             poster="/images/ocean/ocean.png" x5-video-player-type="h5">
-        <source src="/images/ocean/ocean.mp4" type="video/mp4">
-        <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="/">Xcl&#39;sBlog</a></h1>
-      <p></p>
-      <div><img src="/images/bmw.png" class="brand" alt="Xcl&#39;sBlog"></div>
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
-    </div>
-  </div>
-</section>
-
-<div id="landingpage">
   <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
-
-    
-      
-        
+  
 
 <article id="post-知识点" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
@@ -66,9 +32,9 @@
       <header class="article-header">
         
   
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/">知识点</a>
-    </h2>
+    <h1 class="article-title" itemprop="name">
+      知识点
+    </h1>
   
   
 
@@ -2171,6 +2137,41 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
   </div>
 
   
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">创建代理服务器和Vue Cli脚手架</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
 
   
 
@@ -2178,543 +2179,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
 
 
 
-      
-        
-
-<article id="post-创建代理服务器和Vue Cli脚手架" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/">创建代理服务器和Vue Cli脚手架</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" class="article-date">
-  <time datetime="2019-11-28T05:46:14.857Z" itemprop="datePublished">2019-11-28</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <ul>
-<li><p>npm init -y //初始化一个东西</p>
-</li>
-<li><p>npm i express //用express创建一个项目</p>
-</li>
-<li><p>npm i axios//用axios来发起网络请求</p>
-</li>
-<li><p>npm i cors//用cors来实现跨域</p>
-</li>
-<li><p>下面是创建服务器的相关代码:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">"cors"</span>);</span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">"axios"</span>).default;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.urlencoded());</span><br><span class="line">app.use(express.json());</span><br><span class="line">app.use(cors());</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">"/api/v1/proxy"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; url &#125; = req.body;</span><br><span class="line">  axios.get(url).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      info: response.data,</span><br><span class="line">      code: <span class="number">1</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">"代理服务器启动完成"</span>));</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="Vue-Cli安装命令"><a href="#Vue-Cli安装命令" class="headerlink" title="Vue Cli安装命令:"></a>Vue Cli安装命令:</h1><h2 id="如何更新你的Vue-Cli"><a href="#如何更新你的Vue-Cli" class="headerlink" title="如何更新你的Vue Cli"></a>如何更新你的Vue Cli</h2><p>  Run npm i -g @vue/cli to update!</p>
-<h2 id="第一步：安装Vue-Cli。"><a href="#第一步：安装Vue-Cli。" class="headerlink" title="第一步：安装Vue Cli。"></a>第一步：安装Vue Cli。</h2><p>windows系统下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>不是windows系统下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
-<p>温馨提示：下面命令不分系统。</p>
-<h2 id="第二步：创建项目"><a href="#第二步：创建项目" class="headerlink" title="第二步：创建项目"></a>第二步：创建项目</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vue create 你的项目名</span><br><span class="line"></span><br><span class="line">创建过程中选择：</span><br><span class="line">？please pick a preset:</span><br><span class="line">Manually select features  √  ：选择这个</span><br><span class="line">Vue CLI v4<span class="number">.0</span><span class="number">.5</span></span><br><span class="line">? Please pick a preset:</span><br><span class="line">  <span class="keyword">default</span> (babel, eslint)</span><br><span class="line">&gt; Manually select features</span><br><span class="line"></span><br><span class="line">gle all,&lt;i&gt; to invert selection</span><br><span class="line"></span><br><span class="line">(*) Linter / Formatter 光标选中按下空格键</span><br></pre></td></tr></table></figure>
-<p>Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)</p>
-<blockquote>
-<p>In dedicated config files //选择这个，就对了<br>  In package.json<br>In dedicated config files<br>Save this as a preset for future projects? (y/N) No //</p>
-</blockquote>
-<p>cd 你的项目名 //进入你的项目<br>npm run serve //注意：server这个单词不是固定的</p>
-<p>所有的.vue文件都会由webpack插件编译之后输出</p>
-<p>webpack使用vue-loader插件实现组件的编译</p>
-<p>xxx-loader是加载器</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" data-id="ck3icedh600053gnrgkqr5ian"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-CSS Clip Clip-path" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/CSS%20Clip%20Clip-path/">CSS Clip Clip-path</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/CSS%20Clip%20Clip-path/" class="article-date">
-  <time datetime="2019-11-23T08:58:33.926Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <blockquote>
-<blockquote>
-<blockquote>
-<p><a href="https://www.quackit.com/css/properties/css_clip.cfm" target="_blank" rel="noopener">CSS Clip官方API</a><br> <strong>该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性。</strong></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><p>所有主流浏览器都支持 clip 属性。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>clip 属性定义了元素的哪一部分是可见的。clip 属性只适用于 position:absolute 的元素。</p>
-<h2 id="警告：这个属性已被废弃。建议使用-clip-path-。"><a href="#警告：这个属性已被废弃。建议使用-clip-path-。" class="headerlink" title="警告：这个属性已被废弃。建议使用 clip-path 。"></a>警告：这个属性已被废弃。建议使用 clip-path 。</h2><h1 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h1><p>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
-<p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
-<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/* Keyword values */</span><br><span class="line">clip-path: none;</span><br><span class="line"></span><br><span class="line">/* &lt;clip-source&gt; values */ </span><br><span class="line">clip-path: url(resources.svg#c1);</span><br><span class="line"></span><br><span class="line">/* &lt;geometry-box&gt; values */</span><br><span class="line">clip-path: margin-box;</span><br><span class="line">clip-path: border-box;</span><br><span class="line">clip-path: padding-box;</span><br><span class="line">clip-path: content-box;</span><br><span class="line">clip-path: fill-box;</span><br><span class="line">clip-path: stroke-box;</span><br><span class="line">clip-path: view-box;</span><br><span class="line"></span><br><span class="line">/* &lt;basic-shape&gt; values */</span><br><span class="line">clip-path: inset(100px 50px);</span><br><span class="line">clip-path: circle(50px at 0 100px);</span><br><span class="line">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</span><br><span class="line">clip-path: path(&apos;M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z&apos;);</span><br><span class="line"></span><br><span class="line">/* Box and shape values combined */</span><br><span class="line">clip-path: padding-box circle(50px at 0 100px);</span><br><span class="line"></span><br><span class="line">/* Global values */</span><br><span class="line">clip-path: inherit;</span><br><span class="line">clip-path: initial;</span><br><span class="line">clip-path: unset;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck3icedd100033gnrbd6s9y3u"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-CSS Grid 网格" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/">CSS Grid 网格</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" class="article-date">
-  <time datetime="2019-11-23T08:36:14.841Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">css Crid网格</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck3iced1l00003gnrd0b539b2"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-GitHub免费搭建个人博客或网站" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/">GitHub免费搭建个人博客或网站</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" class="article-date">
-  <time datetime="2019-11-23T07:47:07.265Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p>一、Nodejs环境、git环境安装</p>
-<p>注：本教程不做Nodejs、git环境的安装，如未安装，请自行百度</p>
-<p>Nodejs官网</p>
-<p>git官网</p>
-<p>二、Hexo安装</p>
-<p>hexo官网</p>
-<p>安装Hexo</p>
-<p>npm install hexo-cli -g #安装hexo模块<br>hexo init blog #通过hexo创建一个blog项目<br>cd blog<br>npm install<br>hexo server #开发服务</p>
-<p>注：本文不涉及hexo全部方法，如需更多操作请自行学习</p>
-<p>hexo文档</p>
-<p>三、使用github pages</p>
-<p>github pages是给开发者建立一个私人页面，免费且没有空间流量限制。每个github账号都可以创建一个github pages项目</p>
-<p>创建github pages项目</p>
-<p>在github上新建一个项目，项目的名称必须是（你的用户名.github.io)才行</p>
-<p>点击创建<br>四、配置git信息(方便hexo和github通过ssh通信)</p>
-<p>1、设置Git的user name和email：(如果是第一次的话)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"寻未四叔"</span></span><br><span class="line">git config --global user.email <span class="string">"598471284@qq.com"</span></span><br></pre></td></tr></table></figure>
-
-
-<p>查看是否配置成功</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-<p>2、生成密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的注册github的邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p>在/Users/raodaqi/.ssh/目录下会生成两个文件id_rsa和id_rsa.pub</p>
-<p>将id_rsa.pub里的内容配置到github项目的Deploy keys里</p>
-<p>五、配置Deployment</p>
-<p>在blog项目根目录下里找到_config.yml文件，找到Deployment，然后按照如下修改：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-
-<p>比如我的仓库的地址是<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:raodaqi/raodaqi.github.io.git，所以配置如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:raodaqi/raodaqi.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-<p>六、安装 hexo-deployer-git自动部署发布工具</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>七、生成静态文件部署到github</p>
-<p>通过命令hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，发布到github</p>
-<ul>
-<li>1.hexo clean </li>
-<li>2.hexo g </li>
-<li>3.hexo d</li>
-</ul>
-<p>通过链接就可以进行访问：你github用户名.github.io</p>
-<p>八、更改模板，发布博客</p>
-<p>更改模板以及发布博客请自行学习<br>hexo模块</p>
-<p>hexo写作教程</p>
-<p>更换主题教程：</p>
-<p>更换 Hexo 主题非常容易，只要在 themes 文件夹内，新增一个任意名称的文件夹，并修改 _config.yml 内的 theme 设定，即可切换主题。</p>
-<ul>
-<li>1.在终端 cd 到你的博客根目录</li>
-</ul>
-<p>输入命令： git clone 刚才复制的地址 themes/xxxx ，xxxx 是主题名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/theme-next/hexo-theme-next.git themes/next</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>2.使用主题<br>修改博客根目录下的 _config.yml 文件，注释掉原来的 theme 并新增一句 theme: xxxx （注意冒号后面有空格）</li>
-</ul>
-<p>xxxx 为博客根目录 themes/ 文件夹下，对应的主题文件夹名称。</p>
-<p>如果是解压出来的“hexo-theme-aircloud”就写“hexo-theme-aircloud”，如果是自建的“aircloud”就写“aircloud”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck3icedca00013gnr49r34dac"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-什么是圣杯布局和双飞翼布局？" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/">什么是圣杯布局和双飞翼布局？</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" class="article-date">
-  <time datetime="2019-11-23T07:26:25.597Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <h3 id="简述圣杯布局和双飞翼布局"><a href="#简述圣杯布局和双飞翼布局" class="headerlink" title="简述圣杯布局和双飞翼布局"></a>简述圣杯布局和双飞翼布局</h3><p>圣杯布局和双飞翼布局是前端工程师需要日常掌握的重要布局方式。<br>两者的功能相同，都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/9397803-ab11463cd3c26105.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp" alt="效果图" title="this"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<h3 id="圣杯布局和双飞翼布局共同点"><a href="#圣杯布局和双飞翼布局共同点" class="headerlink" title="圣杯布局和双飞翼布局共同点"></a>圣杯布局和双飞翼布局共同点</h3><p>虽然两者的实现方法略有差异，不过都遵循了以下要点：</p>
-<ul>
-<li>两侧宽度固定，中间宽度自适应</li>
-<li>中间部分在 DOM 结构上优先，以便先行渲染</li>
-<li>允许三列中的任意一列成为最高列</li>
-<li>只需要使用一个额外的<div>标签</li>
-</ul>
-<hr>
-<h3 id="圣杯布局-DOM-结构"><a href="#圣杯布局-DOM-结构" class="headerlink" title="圣杯布局 DOM 结构"></a>圣杯布局 DOM 结构</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="圣杯布局-css-结构"><a href="#圣杯布局-css-结构" class="headerlink" title="圣杯布局 css 结构"></a>圣杯布局 css 结构</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">550px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> <span class="selector-class">.column</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: -<span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#footer</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h2><ul>
-<li><ol>
-<li>DOM 结构</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span> <span class="attr">class</span>=<span class="string">"column"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>2.css 代码</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.column</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#footer</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"><a href="#question-如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？" class="headerlink" title="question 如果去掉额外添加的标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？"></a>question 如果去掉额外添加的<div>标签，能否完成相同的布局呢？答案是肯定的。有几种实现方法呢？</h3><ul>
-<li><p>1.flex 布局</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--DOM结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="selector-id">#container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#left</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#right</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>2.css grid网格实现圣杯布局</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"middle"</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span>     </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#header</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">grid-row</span>:<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>:<span class="number">1</span>/<span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="selector-id">#left</span>&#123;</span><br><span class="line">    <span class="attribute">grid-row</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>:<span class="number">1</span>/<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">grid-row</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>:<span class="number">4</span>/<span class="number">5</span>;</span><br><span class="line">    <span class="attribute">background</span>: cadetblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#middle</span>&#123;</span><br><span class="line">    <span class="attribute">grid-row</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>:<span class="number">2</span>/<span class="number">4</span>;</span><br><span class="line">    <span class="attribute">background</span>: rebeccapurple</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#footer</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: gold;</span><br><span class="line">    <span class="attribute">grid-row</span>:<span class="number">3</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>:<span class="number">1</span>/<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>3.使用calc()</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    <span class="selector-class">.column</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(100% - 350px);</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"><span class="selector-tag">-</span> 4使用<span class="selector-tag">border-box</span></span><br><span class="line">```<span class="selector-tag">css</span></span><br><span class="line"><span class="selector-class">.column</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="selector-id">#center</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck3icedeh00043gnr5g94edgl"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/hello-world/">Hello World</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/hello-world/" class="article-date">
-  <time datetime="2019-11-23T02:52:12.988Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck3icedcr00023gnr2oomd6uy"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-  </article>
-  
-
-  
 </section>
-</div>
-
   <footer class="footer">
   <div class="outer">
     <div class="float-right">

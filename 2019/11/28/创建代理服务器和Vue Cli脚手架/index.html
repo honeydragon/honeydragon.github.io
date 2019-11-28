@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    创建代理服务器和Vue Cli脚手架 |
+    
+    Xcl&#39;sBlog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-创建代理服务器和Vue Cli脚手架" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      创建代理服务器和Vue Cli脚手架
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" class="article-date">
+  <time datetime="2019-11-28T05:46:14.857Z" itemprop="datePublished">2019-11-28</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <ul>
+<li><p>npm init -y //初始化一个东西</p>
+</li>
+<li><p>npm i express //用express创建一个项目</p>
+</li>
+<li><p>npm i axios//用axios来发起网络请求</p>
+</li>
+<li><p>npm i cors//用cors来实现跨域</p>
+</li>
+<li><p>下面是创建服务器的相关代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">"cors"</span>);</span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">"axios"</span>).default;</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.urlencoded());</span><br><span class="line">app.use(express.json());</span><br><span class="line">app.use(cors());</span><br><span class="line"></span><br><span class="line">app.post(<span class="string">"/api/v1/proxy"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; url &#125; = req.body;</span><br><span class="line">  axios.get(url).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">    res.json(&#123;</span><br><span class="line">      info: response.data,</span><br><span class="line">      code: <span class="number">1</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">"代理服务器启动完成"</span>));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="Vue-Cli安装命令"><a href="#Vue-Cli安装命令" class="headerlink" title="Vue Cli安装命令:"></a>Vue Cli安装命令:</h1><h2 id="如何更新你的Vue-Cli"><a href="#如何更新你的Vue-Cli" class="headerlink" title="如何更新你的Vue Cli"></a>如何更新你的Vue Cli</h2><p>  Run npm i -g @vue/cli to update!</p>
+<h2 id="第一步：安装Vue-Cli。"><a href="#第一步：安装Vue-Cli。" class="headerlink" title="第一步：安装Vue Cli。"></a>第一步：安装Vue Cli。</h2><p>windows系统下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>不是windows系统下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<p>温馨提示：下面命令不分系统。</p>
+<h2 id="第二步：创建项目"><a href="#第二步：创建项目" class="headerlink" title="第二步：创建项目"></a>第二步：创建项目</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vue create 你的项目名</span><br><span class="line"></span><br><span class="line">创建过程中选择：</span><br><span class="line">？please pick a preset:</span><br><span class="line">Manually select features  √  ：选择这个</span><br><span class="line">Vue CLI v4<span class="number">.0</span><span class="number">.5</span></span><br><span class="line">? Please pick a preset:</span><br><span class="line">  <span class="keyword">default</span> (babel, eslint)</span><br><span class="line">&gt; Manually select features</span><br><span class="line"></span><br><span class="line">gle all,&lt;i&gt; to invert selection</span><br><span class="line"></span><br><span class="line">(*) Linter / Formatter 光标选中按下空格键</span><br></pre></td></tr></table></figure>
+<p>Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)</p>
+<blockquote>
+<p>In dedicated config files //选择这个，就对了<br>  In package.json<br>In dedicated config files<br>Save this as a preset for future projects? (y/N) No //</p>
+</blockquote>
+<p>cd 你的项目名 //进入你的项目<br>npm run serve //注意：server这个单词不是固定的</p>
+<p>所有的.vue文件都会由webpack插件编译之后输出</p>
+<p>webpack使用vue-loader插件实现组件的编译</p>
+<p>xxx-loader是加载器</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" data-id="ck3icedh600053gnrgkqr5ian"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            知识点
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/11/23/CSS%20Clip%20Clip-path/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">CSS Clip Clip-path</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Xcl&#39;sBlog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+  <aside class="sidebar">
+    
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/bmw.png" alt="Xcl&#39;sBlog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
