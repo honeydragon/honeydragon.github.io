@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    vue知识点简单梳理 |
+    
+    Xcl&#39;sBlog</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-vue知识点简单梳理" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue知识点简单梳理
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" class="article-date">
+  <time datetime="2019-12-13T13:37:46.648Z" itemprop="datePublished">2019-12-13</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="一-Vue-基础"><a href="#一-Vue-基础" class="headerlink" title="一. Vue 基础"></a>一. Vue 基础</h1><h3 id="1-模板语法"><a href="#1-模板语法" class="headerlink" title="1.  模板语法"></a>1.  模板语法</h3><p>(1)插值</p>
+<pre><code>a.文本 {{}}
+b.纯HTML v-html ，防止XSS,CSRF
+c.表达式</code></pre><p>(2)指令：是带有 v- 前缀的特殊属性</p>
+<pre><code>v-bind 
+v-if 
+v-show 
+v-on:click 
+v-for</code></pre><p>(3)缩写</p>
+<pre><code>v-bind:src =&gt; :src 
+v-on:click =&gt; @click</code></pre><h3 id="2-class-与-style"><a href="#2-class-与-style" class="headerlink" title="2. class 与 style"></a>2. class 与 style</h3><p>(1)绑定HTML Class </p>
+<pre><code>-对象语法 
+-数组语法 </code></pre><p>(2)绑定内联样式 </p>
+<pre><code>-对象语法
+-数组语法</code></pre><h3 id="3-条件渲染"><a href="#3-条件渲染" class="headerlink" title="3. 条件渲染"></a>3. 条件渲染</h3><pre><code>(1)v-if 
+(2)v-else v-else-if 
+(3)template v-if ,包装元素template 不会被创建
+(4)v-show</code></pre><h3 id="4-列表渲染"><a href="#4-列表渲染" class="headerlink" title="4.列表渲染"></a>4.列表渲染</h3><p>   (1)  v-for (特殊 v-for=”n in 10” :key=””)</p>
+<p>   (2)  v-for (特殊 v-for=”n of 10”)</p>
+<pre><code>:key跟踪每个节点的身份，从而重用和重新排序现有元素
+
+理想的 key 值是每项都有的且唯一的 id</code></pre><p>(3)    数组更新检测</p>
+<p>   a. 使用以下方法操作数组，可以检测变动</p>
+<pre><code>push()
+
+pop() 
+
+shift() 
+
+unshift() 
+
+splice() 
+
+sort() 
+
+reverse()</code></pre><p>b. 新数组替换旧数组</p>
+<pre><code>filter()
+
+concat() 
+
+slice() 
+
+map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="headerlink" title="5. 事件处理"></a>5. 事件处理</h3><p>(1)监听事件</p>
+<pre><code>-直接触发代码 </code></pre><p>(2)方法事件处理器</p>
+<pre><code>-写函数名</code></pre><p>(3)内联处理器方法</p>
+<pre><code>-执行函数表达式 </code></pre><p>(4)事件修饰符 </p>
+<pre><code>https://cn.vuejs.org/v2/guide/events.html </code></pre><p>(5)按键修饰符</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;!-- 阻止单击事件继续传播 --&gt; </span><br><span class="line">&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 提交事件不再重载页面 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 修饰符可以串联 --&gt; </span><br><span class="line">&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 只有修饰符 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt; </span><br><span class="line">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt; </span><br><span class="line">&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt; </span><br><span class="line">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt; </span><br><span class="line">&lt;!-- 即事件不是从内部元素触发的 --&gt; </span><br><span class="line">&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 点击事件将只会触发一次 --&gt; </span><br><span class="line">&lt;a v-on:click .once=&quot;doThis&quot;&gt;&lt;/a&gt;</span><br><span class="line">   </span><br><span class="line"> 注意：</span><br><span class="line">   </span><br><span class="line">v-on:click.prevent.self 会阻止所有的点击。</span><br><span class="line"></span><br><span class="line">v-on:click.self.prevent 只会阻止对元素自身的点击。</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>表单控件绑定/双向数据绑定<br>v-model<br>(1)基本用法 </p>
+<p>-购物车</p>
+<p>(2)修饰符</p>
+<p>.lazy :失去焦点同步一次</p>
+<p>.number :格式化数字</p>
+<p>.trim : 去除首尾空格   </p>
+<h1 id="二-Vue组件"><a href="#二-Vue组件" class="headerlink" title="二. Vue组件"></a>二. Vue组件</h1></li>
+</ol>
+<ol>
+<li>axios与fetch实现数据请求<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//get </span></span><br><span class="line"><span class="number">2</span> fetch(<span class="string">"**"</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>res.json()).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(res)&#125;) </span><br><span class="line"><span class="number">3</span> fetch(<span class="string">"**"</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>res.text()).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(res)&#125;) </span><br><span class="line"><span class="number">4</span> <span class="comment">//post </span></span><br><span class="line"><span class="number">5</span> fetch(<span class="string">"**"</span>,&#123; </span><br><span class="line"><span class="number">6</span> method:<span class="string">'post'</span>, </span><br><span class="line"><span class="number">7</span> headers: &#123; </span><br><span class="line"><span class="number">8</span> <span class="string">"Content‐Type"</span>: <span class="string">"application/x‐www‐form‐urlencoded"</span> </span><br><span class="line"><span class="number">9</span> &#125;, </span><br><span class="line"><span class="number">10</span> body: <span class="string">"name=kerwin&amp;age=100"</span> </span><br><span class="line"><span class="number">11</span> &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>res.json()).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(res)&#125;); </span><br><span class="line"><span class="number">12</span> fetch(<span class="string">"/users"</span>,&#123; </span><br><span class="line"><span class="number">13</span> </span><br><span class="line"><span class="number">14</span> method:<span class="string">'post'</span>, </span><br><span class="line"><span class="number">15</span> <span class="comment">// credentials: 'include', </span></span><br><span class="line"><span class="number">16</span> headers: &#123; </span><br><span class="line"><span class="number">17</span> <span class="string">"Content‐Type"</span>: <span class="string">"application/json"</span> </span><br><span class="line"><span class="number">18</span> &#125;, </span><br><span class="line"><span class="number">19</span> body: <span class="built_in">JSON</span>.stringify(&#123; </span><br><span class="line"><span class="number">20</span> name:<span class="string">"kerwin"</span>, </span><br><span class="line"><span class="number">21</span> age:<span class="number">100</span> </span><br><span class="line"><span class="number">22</span> &#125;) </span><br><span class="line"><span class="number">23</span> &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>res.json()).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(res)&#125;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>(2) axios</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">    axios.get(&quot;&quot;) promise对象 </span><br><span class="line">2   axios.post(&quot;&quot;) promise对象 </span><br><span class="line">3   axios.put(&quot;&quot;) </span><br><span class="line">4   axios.delete(&quot;&quot;) </span><br><span class="line">5 </span><br><span class="line">6   返回的数据会被包装 </span><br><span class="line">7 </span><br><span class="line">8    &#123; </span><br><span class="line">9   *:* </span><br><span class="line">10  data:真实后端数据 </span><br><span class="line">11   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2-计算属性"><a href="#2-计算属性" class="headerlink" title="2. 计算属性"></a>2. 计算属性</h1><p>复杂逻辑,模板难以维护<br>(1) 基础例子<br>(2) 计算缓存 VS methods<br>-计算属性是基于它们的依赖进行缓存的。<br>-计算属性只有在它的相关依赖发生改变时才会重新求值<br>(3) 计算属性 VS watch </p>
+<ul>
+<li>v-model</li>
+</ul>
+<h1 id="3-组件开发基础"><a href="#3-组件开发基础" class="headerlink" title="3.组件开发基础"></a>3.组件开发基础</h1><pre><code>* 扩展html元素，分装可重用的代码
+* 父子组件的data是无法共享的
+* 组件可以有data，methods,computed...,但是data必须是一函数</code></pre><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="4-组件注册方式"><a href="#4-组件注册方式" class="headerlink" title="4. 组件注册方式"></a>4. 组件注册方式</h1><p>a.全局组件 Vue.component<br>b.局部组件 </p>
+<h1 id="5-组件编写方式与vue实例的区别："><a href="#5-组件编写方式与vue实例的区别：" class="headerlink" title="5.组件编写方式与vue实例的区别："></a>5.组件编写方式与vue实例的区别：</h1><p>自定义组件需要有一个root element *父子组件的data是无法共享 *组件可以有data，methods,computed….,但是data 必须是一个函数 </p>
+<h1 id="6-组件通信"><a href="#6-组件通信" class="headerlink" title="6. 组件通信"></a>6. 组件通信</h1><h5 id="i-父子组件传值-props-down-events-up"><a href="#i-父子组件传值-props-down-events-up" class="headerlink" title="i. 父子组件传值 (props down, events up)"></a>i. 父子组件传值 (props down, events up)</h5><h5 id="ii-属性验证"><a href="#ii-属性验证" class="headerlink" title="ii. 属性验证"></a>ii. 属性验证</h5><p>props:{name:Number}<br>Number,String,Boolean,Array,Object,Function,null(不限制类型) </p>
+<h6 id="iii-事件机制"><a href="#iii-事件机制" class="headerlink" title="iii. 事件机制"></a>iii. 事件机制</h6><h5 id="使用-on-eventName-监听事件"><a href="#使用-on-eventName-监听事件" class="headerlink" title="使用 $on(eventName) 监听事件"></a>使用 $on(eventName) 监听事件</h5><h6 id="ib-使用-emit-eventName-触发事件"><a href="#ib-使用-emit-eventName-触发事件" class="headerlink" title="ib.使用 $emit(eventName) 触发事件"></a>ib.使用 $emit(eventName) 触发事件</h6><p>iv. Ref  this.$refs.mytext </p>
+<p>v. 事件总线 var bus = new Vue(); * mounted生命周期中进行监听 </p>
+<h1 id="7-动态组件"><a href="#7-动态组件" class="headerlink" title="7. 动态组件"></a>7. 动态组件</h1><ul>
+<li>元素，动态地绑定多个组件到它的 is 属性 * 保留状态，避免重新渲染</li>
+</ul>
+<h1 id="vue进阶"><a href="#vue进阶" class="headerlink" title="vue进阶"></a>vue进阶</h1><h3 id="1-slot插槽"><a href="#1-slot插槽" class="headerlink" title="1. slot插槽"></a>1. slot插槽</h3><p>a.单个slot<br>b.具名slot</p>
+<ul>
+<li>混合父组件的内容与子组件自己的模板–》 内容分发</li>
+<li>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译</li>
+</ul>
+<h3 id="2-transition"><a href="#2-transition" class="headerlink" title="2.transition"></a>2.transition</h3><p>vue 在插入，更新或者移除DOM时，提供多种不同的应用过度效果<br>（1）单组件/组件过渡</p>
+<ul>
+<li>css过渡</li>
+<li>css动画</li>
+<li>结合animate.css动画库</li>
+</ul>
+<p>（2）多个元素过渡（设置key）</p>
+<ul>
+<li>mode:in-out; out-in<br>（3）多个组件过渡<br>（4） 列表过渡（设置key）</li>
+<li><transition-group>不同于transition，他会以一个真实的元素呈现：默认为一个<span>.可以特性更换为其他元素通过tag特性更换其他元素</li>
+<li>提供唯一的key属性值<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5></li>
+</ul>
+<ol>
+<li>生命周期各个阶段</li>
+</ol>
+<p><a href="https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90" target="_blank" rel="noopener">https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90</a></p>
+<ol start="2">
+<li>生命周期钩子函数的触发条件与作用</li>
+</ol>
+<h5 id="vant-element-ui学习"><a href="#vant-element-ui学习" class="headerlink" title="vant element-ui学习"></a>vant element-ui学习</h5><h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><h5 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h5><p>（1）自定义指令介绍directives<br>（2） 钩子函数<br>（3） 函数简写<br>（4） 自定义指令-轮播</p>
+<h1 id="VUE-进阶2"><a href="#VUE-进阶2" class="headerlink" title="VUE 进阶2"></a>VUE 进阶2</h1><h6 id="1-单文件组件"><a href="#1-单文件组件" class="headerlink" title="1.单文件组件"></a>1.单文件组件</h6><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/single-file-components.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">b.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script src=&apos;&apos;&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;stylesrc=&apos;&apos;&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h6><p>npm install -g @vue/cli </p>
+<p>vue creat 文件名</p>
+<ul>
+<li>npm run serve 开发环境构建</li>
+<li>npm run build 生产环境构建</li>
+<li>npm run lint 代码检测工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">style 标签 加上scoped属性，css局部生效</span><br><span class="line">style 标签 加上lang=&quot;scss&quot;，支持scss</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li>Vue.config.js的配置</li>
+</ol>
+<p>(1)proxy代理<br><a href="https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line"></span><br><span class="line">port:8000,</span><br><span class="line">proxy:&#123;</span><br><span class="line">&apos;/v4&apos;:&#123;</span><br><span class="line">target:&apos;https://m.maizuo.com&apos;,</span><br><span class="line">host:&apos;m.maizuo.com&apos;,</span><br><span class="line">changeOrigin:true</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>（2）alias别名配置</p>
+<p>@is an alias to /src<br>(3) vue.config.js中配置publicPath：“./”</p>
+<p>(4) 关闭eslint</p>
+<p>（5） Json-server实现mock数据</p>
+<p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">https://github.com/typicode/json-server</a></p>
+<p>（6） MPA（多页面）应用的配置</p>
+<p><a href="https://cli.vuejs.org/zh/config/#pages" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#pages</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module.exports=&#123;</span><br><span class="line">    pages:&#123;</span><br><span class="line">    index:&#123;</span><br><span class="line">    </span><br><span class="line">    //page 的入口</span><br><span class="line">    </span><br><span class="line">    entry:&apos;src/index/main.js&apos;,</span><br><span class="line">    </span><br><span class="line">    // 模板来源</span><br><span class="line">    </span><br><span class="line">    template:&apos;public/index.html&apos;,</span><br><span class="line">    </span><br><span class="line">    // 在dist/index.html</span><br><span class="line">    filename：‘index.html’,</span><br><span class="line">    </span><br><span class="line">    //template 中的title标签需要是 &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">    title:&apos;Index Page&apos;,</span><br><span class="line">    // 在这个页面中包含的块，默认情况下会包含</span><br><span class="line">    // 提取出来的通用chunk 和 vendor   chunk</span><br><span class="line">    chunks:[&apos;chunk-vendors&apos;,&apos;chunk-common&apos;,&apos;index&apos;]</span><br><span class="line">    &#125;,</span><br><span class="line">    //当使用只有入口的字符串格式时，</span><br><span class="line">    // 模板会被推导为``public/kerwin`</span><br><span class="line">    </span><br><span class="line">    kerwin:&apos;src/kerwin/main.js&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用vue-cli进行组件化开发"><a href="#利用vue-cli进行组件化开发" class="headerlink" title="利用vue-cli进行组件化开发"></a>利用vue-cli进行组件化开发</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" data-id="ck447t7bv0006p4nr1k9s9u7v"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">知识点</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 Xcl&#39;sBlog</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank" rel="noopener">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+
+  <aside class="sidebar">
+    
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/bmw.png" alt="Xcl&#39;sBlog"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">主页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">归档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
