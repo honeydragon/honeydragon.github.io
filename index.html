@@ -12,12 +12,18 @@
   
     <link rel="shortcut icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
   
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
   
-  <script src="/js/pace.min.js"></script>
-</head>
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
 <main class="content">
@@ -56,6 +62,92 @@
     <h1 class="page-type-title"></h1>
 
     
+      
+        
+
+<article id="post-数组去重方法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2019-12-19T11:16:47.546Z" itemprop="datePublished">2019-12-19</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="数组去重方法"><a href="#数组去重方法" class="headerlink" title="数组去重方法"></a>数组去重方法</h1><p>1、ES6 Set去重  （此方法无法对{}去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>2、<code>...new Set()</code>  去重  （此方法无法对{}去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"> <span class="keyword">var</span> arr1 = [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"> <span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<p>3、对象的属性不能重复的特性 去重</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arrry = [];</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!obj[arr[i]]) &#123;</span><br><span class="line">            arrry.push(arr[i])</span><br><span class="line">            obj[arr[i]] = <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            obj[arr[i]]++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrry;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>4、sort (！此方法无法对{} 和 NaN 去重)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    arr = arr.sort()</span><br><span class="line">    <span class="keyword">var</span> arr1 = [arr[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (arr[i] !== arr[i - <span class="number">1</span>]) &#123;</span><br><span class="line">    		arr1.push(arr[i]);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>5、js中for循环去重（！此方法无法对{} 和 NaN 去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] == arr[j]) &#123;</span><br><span class="line">                arr.splice(j, <span class="number">1</span>);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"> <span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>6、indexOf去重（！此方法无法对{} 和 NaN 去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr1.indexOf(arr[i]) === <span class="number">-1</span>) &#123;</span><br><span class="line">            arr1.push(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>7、递归去重（！此方法无法对{} 和 NaN 去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr1 = arr;          </span><br><span class="line">    arr1.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> a - b;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">loop</span>(<span class="params">index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr1[index] === arr1[index - <span class="number">1</span>]) &#123;</span><br><span class="line">                arr1.splice(index, <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            loop(index - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    loop(arr1.length - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> arr1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>8、Map去重（！此方法无法对{}  去重）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">     <span class="keyword">let</span> array = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">// 数组用于返回结果</span></span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (map.has(arr[i])) &#123; <span class="comment">// 如果有该key值</span></span><br><span class="line">             map.set(arr[i], <span class="literal">true</span>);</span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             map.set(arr[i], <span class="literal">false</span>); <span class="comment">// 如果没有该key值</span></span><br><span class="line">             array.push(arr[i]);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+<p>9、filter去重</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">noRepeat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item, index, arr</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> arr.indexOf(item, <span class="number">0</span>) === index;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">5</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>, &#123;&#125;, &#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(noRepeat(arr))</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ck4s52dk40009wwnr70ti4rga"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
       
         
 
@@ -143,7 +235,7 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 <pre><code>-写函数名</code></pre><p>(3)内联处理器方法</p>
 <pre><code>-执行函数表达式 </code></pre><p>(4)事件修饰符 </p>
 <pre><code>https://cn.vuejs.org/v2/guide/events.html </code></pre><p>(5)按键修饰符</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;!-- 阻止单击事件继续传播 --&gt; </span><br><span class="line">&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 提交事件不再重载页面 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 修饰符可以串联 --&gt; </span><br><span class="line">&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 只有修饰符 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt; </span><br><span class="line">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt; </span><br><span class="line">&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt; </span><br><span class="line">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt; </span><br><span class="line">&lt;!-- 即事件不是从内部元素触发的 --&gt; </span><br><span class="line">&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 点击事件将只会触发一次 --&gt; </span><br><span class="line">&lt;a v-on:click .once=&quot;doThis&quot;&gt;&lt;/a&gt;</span><br><span class="line">   </span><br><span class="line"> 注意：</span><br><span class="line">   </span><br><span class="line">v-on:click.prevent.self 会阻止所有的点击。</span><br><span class="line"></span><br><span class="line">v-on:click.self.prevent 只会阻止对元素自身的点击。</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;!-- 阻止单击事件继续传播 --&gt; </span><br><span class="line">&lt;a v-on:click.stop&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;a&gt; </span><br><span class="line">&lt;!-- 提交事件不再重载页面 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&#x3D;&quot;onSubmit&quot;&gt;&lt;&#x2F;form&gt; </span><br><span class="line">&lt;!-- 修饰符可以串联 --&gt; </span><br><span class="line">&lt;a v-on:click.stop.prevent&#x3D;&quot;doThat&quot;&gt;&lt;&#x2F;a&gt; </span><br><span class="line">&lt;!-- 只有修饰符 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;&#x2F;form&gt; </span><br><span class="line">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt; </span><br><span class="line">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt; </span><br><span class="line">&lt;div v-on:click.capture&#x3D;&quot;doThis&quot;&gt;...&lt;&#x2F;div&gt; </span><br><span class="line">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt; </span><br><span class="line">&lt;!-- 即事件不是从内部元素触发的 --&gt; </span><br><span class="line">&lt;div v-on:click.self&#x3D;&quot;doThat&quot;&gt;...&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 点击事件将只会触发一次 --&gt; </span><br><span class="line">&lt;a v-on:click .once&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">   </span><br><span class="line"> 注意：</span><br><span class="line">   </span><br><span class="line">v-on:click.prevent.self 会阻止所有的点击。</span><br><span class="line"></span><br><span class="line">v-on:click.self.prevent 只会阻止对元素自身的点击。</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
 <li><p>表单控件绑定/双向数据绑定<br>v-model<br>(1)基本用法 </p>
@@ -205,21 +297,21 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 </ol>
 <h5 id="vant-element-ui学习"><a href="#vant-element-ui学习" class="headerlink" title="vant element-ui学习"></a>vant element-ui学习</h5><h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><h5 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h5><p>（1）自定义指令介绍directives<br>（2） 钩子函数<br>（3） 函数简写<br>（4） 自定义指令-轮播</p>
 <h1 id="VUE-进阶2"><a href="#VUE-进阶2" class="headerlink" title="VUE 进阶2"></a>VUE 进阶2</h1><h6 id="1-单文件组件"><a href="#1-单文件组件" class="headerlink" title="1.单文件组件"></a>1.单文件组件</h6><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/single-file-components.html</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">b.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script src=&apos;&apos;&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;stylesrc=&apos;&apos;&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">b.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script src&#x3D;&#39;&#39;&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;stylesrc&#x3D;&#39;&#39;&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
 <h6 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h6><p>npm install -g @vue/cli </p>
 <p>vue creat 文件名</p>
 <ul>
 <li>npm run serve 开发环境构建</li>
 <li>npm run build 生产环境构建</li>
-<li>npm run lint 代码检测工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">style 标签 加上scoped属性，css局部生效</span><br><span class="line">style 标签 加上lang=&quot;scss&quot;，支持scss</span><br></pre></td></tr></table></figure>
+<li>npm run lint 代码检测工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">style 标签 加上scoped属性，css局部生效</span><br><span class="line">style 标签 加上lang&#x3D;&quot;scss&quot;，支持scss</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ol start="3">
 <li>Vue.config.js的配置</li>
 </ol>
 <p>(1)proxy代理<br><a href="https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line"></span><br><span class="line">port:8000,</span><br><span class="line">proxy:&#123;</span><br><span class="line">&apos;/v4&apos;:&#123;</span><br><span class="line">target:&apos;https://m.maizuo.com&apos;,</span><br><span class="line">host:&apos;m.maizuo.com&apos;,</span><br><span class="line">changeOrigin:true</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line"></span><br><span class="line">port:8000,</span><br><span class="line">proxy:&#123;</span><br><span class="line">&#39;&#x2F;v4&#39;:&#123;</span><br><span class="line">target:&#39;https:&#x2F;&#x2F;m.maizuo.com&#39;,</span><br><span class="line">host:&#39;m.maizuo.com&#39;,</span><br><span class="line">changeOrigin:true</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>（2）alias别名配置</p>
@@ -229,13 +321,150 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 <p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">https://github.com/typicode/json-server</a></p>
 <p>（6） MPA（多页面）应用的配置</p>
 <p><a href="https://cli.vuejs.org/zh/config/#pages" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#pages</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module.exports=&#123;</span><br><span class="line">    pages:&#123;</span><br><span class="line">    index:&#123;</span><br><span class="line">    </span><br><span class="line">    //page 的入口</span><br><span class="line">    </span><br><span class="line">    entry:&apos;src/index/main.js&apos;,</span><br><span class="line">    </span><br><span class="line">    // 模板来源</span><br><span class="line">    </span><br><span class="line">    template:&apos;public/index.html&apos;,</span><br><span class="line">    </span><br><span class="line">    // 在dist/index.html</span><br><span class="line">    filename：‘index.html’,</span><br><span class="line">    </span><br><span class="line">    //template 中的title标签需要是 &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">    title:&apos;Index Page&apos;,</span><br><span class="line">    // 在这个页面中包含的块，默认情况下会包含</span><br><span class="line">    // 提取出来的通用chunk 和 vendor   chunk</span><br><span class="line">    chunks:[&apos;chunk-vendors&apos;,&apos;chunk-common&apos;,&apos;index&apos;]</span><br><span class="line">    &#125;,</span><br><span class="line">    //当使用只有入口的字符串格式时，</span><br><span class="line">    // 模板会被推导为``public/kerwin`</span><br><span class="line">    </span><br><span class="line">    kerwin:&apos;src/kerwin/main.js&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module.exports&#x3D;&#123;</span><br><span class="line">    pages:&#123;</span><br><span class="line">    index:&#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;page 的入口</span><br><span class="line">    </span><br><span class="line">    entry:&#39;src&#x2F;index&#x2F;main.js&#39;,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 模板来源</span><br><span class="line">    </span><br><span class="line">    template:&#39;public&#x2F;index.html&#39;,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 在dist&#x2F;index.html</span><br><span class="line">    filename：‘index.html’,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;template 中的title标签需要是 &lt;title&gt;&lt;%&#x3D; htmlWebpackPlugin.options.title %&gt;&lt;&#x2F;title&gt;</span><br><span class="line">    </span><br><span class="line">    title:&#39;Index Page&#39;,</span><br><span class="line">    &#x2F;&#x2F; 在这个页面中包含的块，默认情况下会包含</span><br><span class="line">    &#x2F;&#x2F; 提取出来的通用chunk 和 vendor   chunk</span><br><span class="line">    chunks:[&#39;chunk-vendors&#39;,&#39;chunk-common&#39;,&#39;index&#39;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F;当使用只有入口的字符串格式时，</span><br><span class="line">    &#x2F;&#x2F; 模板会被推导为&#96;&#96;public&#x2F;kerwin&#96;</span><br><span class="line">    </span><br><span class="line">    kerwin:&#39;src&#x2F;kerwin&#x2F;main.js&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="利用vue-cli进行组件化开发"><a href="#利用vue-cli进行组件化开发" class="headerlink" title="利用vue-cli进行组件化开发"></a>利用vue-cli进行组件化开发</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" data-id="ck447t7bv0006p4nr1k9s9u7v"
+      <a data-url="http://yoursite.com/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" data-id="ck4s52dh80005wwnrh2q5gfo7"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-git" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/03/git/">git</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/03/git/" class="article-date">
+  <time datetime="2019-12-03T07:10:44.371Z" itemprop="datePublished">2019-12-03</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>��֧����<br>������ϲ���<br>git branch dev ��֧��<br>git branch �鿴��ǰ��֧<br>git checkout dev �л���֧<br>��ǰ��֧�Ĳ���������������֧���ţ�</p>
+<p>�ϲ���<br>git merge dev<br>ɾ����<br>git branch -d dev</p>
+<p>�����ͻ��<br>��һ����֧�ϸ��ļ�<br>����һ����֧��Ҳ�����˴��ļ�<br>��ô�ϲ�������֧ʱ�ͻᷢ����ͻ��<br>��ô��Ҫ�Լ�ѡ����ɶ���߶�ɾ����git add;<br>ע��push</p>
+<p>git checkout -b dev<br>git add README.md<br>git branch xcl ����xcl��֧<br>git checkout xcl �л���֧<br>git add README.md<br>git commit -m xcl<br>git push<br>git push –set-upstream origin xcl</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/03/git/" data-id="ck4s52dgr0001wwnrelqc8usb"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+      
+        
+
+<article id="post-vant和vue常用命令" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/12/03/vant%E5%92%8Cvue%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">vant和vue常用命令</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/12/03/vant%E5%92%8Cvue%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2019-12-03T03:07:45.617Z" itemprop="datePublished">2019-12-03</time>
+</a>
+        
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <h1 id="安装-Vue-Cli"><a href="#安装-Vue-Cli" class="headerlink" title="安装 Vue Cli"></a>安装 Vue Cli</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue&#x2F;cli</span><br></pre></td></tr></table></figure>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create hello-world (hello-world为我的项目名)</span><br></pre></td></tr></table></figure>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">? Please pick a preset:</span><br><span class="line">  default (babel, eslint)</span><br><span class="line">&gt; Manually select features  &#x2F;&#x2F;选这个</span><br></pre></td></tr></table></figure>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">? Please pick a preset: Manually select features</span><br><span class="line">? Check the features needed for your project:</span><br><span class="line"> (*) Babel</span><br><span class="line"> ( ) TypeScript</span><br><span class="line"> ( ) Progressive Web App (PWA) Support</span><br><span class="line">&gt;(*) Router</span><br><span class="line"> ( ) Vuex</span><br><span class="line"> ( ) CSS Pre-processors</span><br><span class="line"> ( ) Linter &#x2F; Formatter</span><br><span class="line"> ( ) Unit Testing</span><br><span class="line"> ( ) E2E Testing</span><br></pre></td></tr></table></figure>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use history mode for router? (Requires proper server setup for index fallback in production) (Y&#x2F;n) n</span><br></pre></td></tr></table></figure>
+<h1 id="6"><a href="#6" class="headerlink" title="6"></a>6</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> ? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)</span><br><span class="line">&gt; In dedicated config files &#x2F;&#x2F;选择个</span><br><span class="line">  In package.json</span><br></pre></td></tr></table></figure>
+<h1 id="7"><a href="#7" class="headerlink" title="7"></a>7</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">? Save this as a preset for future projects? (y&#x2F;N) n</span><br></pre></td></tr></table></figure>
+<h1 id="8提示信息为："><a href="#8提示信息为：" class="headerlink" title="8提示信息为："></a>8提示信息为：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hello-world</span><br><span class="line">npm run serve  （&quot;serve&quot;: &quot;vue-cli-service serve&quot;）&#x2F;&#x2F;行家，你懂的</span><br></pre></td></tr></table></figure>
+<p>先不慌着执行命令，先安装vant插件，在执行npm run serve</p>
+<h1 id="9-重点：安装vant"><a href="#9-重点：安装vant" class="headerlink" title="9 重点：安装vant"></a>9 重点：安装vant</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vant</span><br></pre></td></tr></table></figure>
+
+<h2 id="话外题"><a href="#话外题" class="headerlink" title="话外题"></a>话外题</h2><h3 id="Vant-Touch-Emulator-在桌面端上模拟移动端-touch-事件，实现方式来自于-hammerjs-touchemulator"><a href="#Vant-Touch-Emulator-在桌面端上模拟移动端-touch-事件，实现方式来自于-hammerjs-touchemulator" class="headerlink" title="Vant Touch Emulator 在桌面端上模拟移动端 touch 事件，实现方式来自于 hammerjs/touchemulator."></a>Vant Touch Emulator 在桌面端上模拟移动端 touch 事件，实现方式来自于 hammerjs/touchemulator.</h3><h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p><strong>NPM</strong><br>npm i @vant/touch-emulator -S</p>
+<p><strong>YARN</strong><br>yarn add @vant/touch-emulator</p>
+<p><strong>使用指南</strong></p>
+<p>直接在代码中引入模块即可，模块会自动完成初始化并生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#39;@vant&#x2F;touch-emulator&#39;;</span><br><span class="line"></span><br><span class="line">CDN 引入</span><br><span class="line"></span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;@vant&#x2F;touch-emulator&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/03/vant%E5%92%8Cvue%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ck4s52dh20003wwnrhufugk5s"
          class="article-share-link">分享</a>
       
     </footer>
@@ -975,7 +1204,7 @@ console.log(a);
 
 <title></title>
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
 
@@ -2357,7 +2586,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="ck447t7h20007p4nr7yboa43s"
+      <a data-url="http://yoursite.com/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="ck4s52dmr000awwnr31ao2bkw"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2445,7 +2674,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" data-id="ck447t78t0003p4nrg9hm0ks5"
+      <a data-url="http://yoursite.com/2019/11/28/%E5%88%9B%E5%BB%BA%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8CVue%20Cli%E8%84%9A%E6%89%8B%E6%9E%B6/" data-id="ck4s52djv0007wwnr83qgd9rl"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2511,7 +2740,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>clip 属性定义了元素的哪一部分是可见的。clip 属性只适用于 position:absolute 的元素。</p>
 <h2 id="警告：这个属性已被废弃。建议使用-clip-path-。"><a href="#警告：这个属性已被废弃。建议使用-clip-path-。" class="headerlink" title="警告：这个属性已被废弃。建议使用 clip-path 。"></a>警告：这个属性已被废弃。建议使用 clip-path 。</h2><h1 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h1><p>这个属性用于定义一个剪裁矩形。对于一个绝对定义元素，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。</p>
 <p>clip-path CSS 属性可以创建一个只有元素的部分区域可以显示的剪切区域。区域内的部分显示，区域外的隐藏。剪切区域是被引用内嵌的URL定义的路径或者外部svg的路径，或者作为一个形状例如circle().。clip-path属性代替了现在已经弃用的剪切 clip属性。</p>
-<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/* Keyword values */</span><br><span class="line">clip-path: none;</span><br><span class="line"></span><br><span class="line">/* &lt;clip-source&gt; values */ </span><br><span class="line">clip-path: url(resources.svg#c1);</span><br><span class="line"></span><br><span class="line">/* &lt;geometry-box&gt; values */</span><br><span class="line">clip-path: margin-box;</span><br><span class="line">clip-path: border-box;</span><br><span class="line">clip-path: padding-box;</span><br><span class="line">clip-path: content-box;</span><br><span class="line">clip-path: fill-box;</span><br><span class="line">clip-path: stroke-box;</span><br><span class="line">clip-path: view-box;</span><br><span class="line"></span><br><span class="line">/* &lt;basic-shape&gt; values */</span><br><span class="line">clip-path: inset(100px 50px);</span><br><span class="line">clip-path: circle(50px at 0 100px);</span><br><span class="line">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</span><br><span class="line">clip-path: path(&apos;M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z&apos;);</span><br><span class="line"></span><br><span class="line">/* Box and shape values combined */</span><br><span class="line">clip-path: padding-box circle(50px at 0 100px);</span><br><span class="line"></span><br><span class="line">/* Global values */</span><br><span class="line">clip-path: inherit;</span><br><span class="line">clip-path: initial;</span><br><span class="line">clip-path: unset;</span><br></pre></td></tr></table></figure>
+<h1 id="clip-path语法"><a href="#clip-path语法" class="headerlink" title="clip-path语法"></a>clip-path语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;* Keyword values *&#x2F;</span><br><span class="line">clip-path: none;</span><br><span class="line"></span><br><span class="line">&#x2F;* &lt;clip-source&gt; values *&#x2F; </span><br><span class="line">clip-path: url(resources.svg#c1);</span><br><span class="line"></span><br><span class="line">&#x2F;* &lt;geometry-box&gt; values *&#x2F;</span><br><span class="line">clip-path: margin-box;</span><br><span class="line">clip-path: border-box;</span><br><span class="line">clip-path: padding-box;</span><br><span class="line">clip-path: content-box;</span><br><span class="line">clip-path: fill-box;</span><br><span class="line">clip-path: stroke-box;</span><br><span class="line">clip-path: view-box;</span><br><span class="line"></span><br><span class="line">&#x2F;* &lt;basic-shape&gt; values *&#x2F;</span><br><span class="line">clip-path: inset(100px 50px);</span><br><span class="line">clip-path: circle(50px at 0 100px);</span><br><span class="line">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);</span><br><span class="line">clip-path: path(&#39;M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;* Box and shape values combined *&#x2F;</span><br><span class="line">clip-path: padding-box circle(50px at 0 100px);</span><br><span class="line"></span><br><span class="line">&#x2F;* Global values *&#x2F;</span><br><span class="line">clip-path: inherit;</span><br><span class="line">clip-path: initial;</span><br><span class="line">clip-path: unset;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -2521,7 +2750,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck447t78z0005p4nr39a5ds40"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Clip%20Clip-path/" data-id="ck4s52dh50004wwnr93nm4tu9"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2581,7 +2810,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck447t71m0000p4nr36ttbkly"
+      <a data-url="http://yoursite.com/2019/11/23/CSS%20Grid%20%E7%BD%91%E6%A0%BC/" data-id="ck4s52d9j0000wwnr7i0g0i3b"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2679,7 +2908,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 
-<p>比如我的仓库的地址是<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:raodaqi/raodaqi.github.io.git，所以配置如下</p>
+<p>比如我的仓库的地址是<a href="mailto:git@github.com">git@github.com</a>:raodaqi/raodaqi.github.io.git，所以配置如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:raodaqi/raodaqi.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 <p>六、安装 hexo-deployer-git自动部署发布工具</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
@@ -2710,7 +2939,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck447t78m0001p4nrefnv2aig"
+      <a data-url="http://yoursite.com/2019/11/23/GitHub%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%88%96%E7%BD%91%E7%AB%99/" data-id="ck4s52dgy0002wwnr4xx65i3d"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2814,79 +3043,7 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck447t78q0002p4nr8s75gekk"
-         class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
-      
-        
-
-<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/11/23/hello-world/">Hello World</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/11/23/hello-world/" class="article-date">
-  <time datetime="2019-11-23T02:52:12.988Z" itemprop="datePublished">2019-11-23</time>
-</a>
-        
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/23/hello-world/" data-id="ck447t78w0004p4nrarze32bt"
+      <a data-url="http://yoursite.com/2019/11/23/%E4%BB%80%E4%B9%88%E6%98%AF%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%EF%BC%9F/" data-id="ck4s52dhb0006wwnrb66dg0bv"
          class="article-share-link">分享</a>
       
     </footer>
@@ -2905,6 +3062,11 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
   </article>
   
 
+  
+    <nav class="page-nav">
+      
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </nav>
   
 </section>
 </div>
@@ -2988,17 +3150,29 @@ src: url(&apos;Sansation\_Light.ttf&apos;), url(&apos;Sansation\_Light.eot&apos;
 </div>
 </div>
   </aside>
-  <script src="/js/jquery-2.0.3.min.js"></script>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
 <script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
 <script src="/js/lazyload.min.js"></script>
+
+
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
 
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
 
 
 
 
 <script src="/js/ocean.js"></script>
+
 
 </body>
 </html>

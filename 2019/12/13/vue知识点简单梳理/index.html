@@ -13,12 +13,18 @@
   
     <link rel="shortcut icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="/css/style.css">
   
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
   
-  <script src="/js/pace.min.js"></script>
-</head>
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
 <main class="content">
@@ -109,7 +115,7 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 <pre><code>-写函数名</code></pre><p>(3)内联处理器方法</p>
 <pre><code>-执行函数表达式 </code></pre><p>(4)事件修饰符 </p>
 <pre><code>https://cn.vuejs.org/v2/guide/events.html </code></pre><p>(5)按键修饰符</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;!-- 阻止单击事件继续传播 --&gt; </span><br><span class="line">&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 提交事件不再重载页面 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 修饰符可以串联 --&gt; </span><br><span class="line">&lt;a v-on:click.stop.prevent=&quot;doThat&quot;&gt;&lt;/a&gt; </span><br><span class="line">&lt;!-- 只有修饰符 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;/form&gt; </span><br><span class="line">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt; </span><br><span class="line">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt; </span><br><span class="line">&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt; </span><br><span class="line">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt; </span><br><span class="line">&lt;!-- 即事件不是从内部元素触发的 --&gt; </span><br><span class="line">&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 点击事件将只会触发一次 --&gt; </span><br><span class="line">&lt;a v-on:click .once=&quot;doThis&quot;&gt;&lt;/a&gt;</span><br><span class="line">   </span><br><span class="line"> 注意：</span><br><span class="line">   </span><br><span class="line">v-on:click.prevent.self 会阻止所有的点击。</span><br><span class="line"></span><br><span class="line">v-on:click.self.prevent 只会阻止对元素自身的点击。</span><br></pre></td></tr></table></figure>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;!-- 阻止单击事件继续传播 --&gt; </span><br><span class="line">&lt;a v-on:click.stop&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;a&gt; </span><br><span class="line">&lt;!-- 提交事件不再重载页面 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&#x3D;&quot;onSubmit&quot;&gt;&lt;&#x2F;form&gt; </span><br><span class="line">&lt;!-- 修饰符可以串联 --&gt; </span><br><span class="line">&lt;a v-on:click.stop.prevent&#x3D;&quot;doThat&quot;&gt;&lt;&#x2F;a&gt; </span><br><span class="line">&lt;!-- 只有修饰符 --&gt; </span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;&#x2F;form&gt; </span><br><span class="line">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt; </span><br><span class="line">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt; </span><br><span class="line">&lt;div v-on:click.capture&#x3D;&quot;doThis&quot;&gt;...&lt;&#x2F;div&gt; </span><br><span class="line">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt; </span><br><span class="line">&lt;!-- 即事件不是从内部元素触发的 --&gt; </span><br><span class="line">&lt;div v-on:click.self&#x3D;&quot;doThat&quot;&gt;...&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 点击事件将只会触发一次 --&gt; </span><br><span class="line">&lt;a v-on:click .once&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">   </span><br><span class="line"> 注意：</span><br><span class="line">   </span><br><span class="line">v-on:click.prevent.self 会阻止所有的点击。</span><br><span class="line"></span><br><span class="line">v-on:click.self.prevent 只会阻止对元素自身的点击。</span><br></pre></td></tr></table></figure>
 
 <ol start="6">
 <li><p>表单控件绑定/双向数据绑定<br>v-model<br>(1)基本用法 </p>
@@ -171,21 +177,21 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 </ol>
 <h5 id="vant-element-ui学习"><a href="#vant-element-ui学习" class="headerlink" title="vant element-ui学习"></a>vant element-ui学习</h5><h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><h5 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h5><p>（1）自定义指令介绍directives<br>（2） 钩子函数<br>（3） 函数简写<br>（4） 自定义指令-轮播</p>
 <h1 id="VUE-进阶2"><a href="#VUE-进阶2" class="headerlink" title="VUE 进阶2"></a>VUE 进阶2</h1><h6 id="1-单文件组件"><a href="#1-单文件组件" class="headerlink" title="1.单文件组件"></a>1.单文件组件</h6><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/single-file-components.html</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">b.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script src=&apos;&apos;&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;stylesrc=&apos;&apos;&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">b.</span><br><span class="line">&lt;template&gt;</span><br><span class="line">html代码</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script src&#x3D;&#39;&#39;&gt;</span><br><span class="line">js代码</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;stylesrc&#x3D;&#39;&#39;&gt;</span><br><span class="line">    css代码</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
 <h6 id="vue-cli的使用"><a href="#vue-cli的使用" class="headerlink" title="vue-cli的使用"></a>vue-cli的使用</h6><p>npm install -g @vue/cli </p>
 <p>vue creat 文件名</p>
 <ul>
 <li>npm run serve 开发环境构建</li>
 <li>npm run build 生产环境构建</li>
-<li>npm run lint 代码检测工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">style 标签 加上scoped属性，css局部生效</span><br><span class="line">style 标签 加上lang=&quot;scss&quot;，支持scss</span><br></pre></td></tr></table></figure>
+<li>npm run lint 代码检测工具<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">style 标签 加上scoped属性，css局部生效</span><br><span class="line">style 标签 加上lang&#x3D;&quot;scss&quot;，支持scss</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ol start="3">
 <li>Vue.config.js的配置</li>
 </ol>
 <p>(1)proxy代理<br><a href="https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line"></span><br><span class="line">port:8000,</span><br><span class="line">proxy:&#123;</span><br><span class="line">&apos;/v4&apos;:&#123;</span><br><span class="line">target:&apos;https://m.maizuo.com&apos;,</span><br><span class="line">host:&apos;m.maizuo.com&apos;,</span><br><span class="line">changeOrigin:true</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">devServer:&#123;</span><br><span class="line"></span><br><span class="line">port:8000,</span><br><span class="line">proxy:&#123;</span><br><span class="line">&#39;&#x2F;v4&#39;:&#123;</span><br><span class="line">target:&#39;https:&#x2F;&#x2F;m.maizuo.com&#39;,</span><br><span class="line">host:&#39;m.maizuo.com&#39;,</span><br><span class="line">changeOrigin:true</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>（2）alias别名配置</p>
@@ -195,13 +201,13 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 <p><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">https://github.com/typicode/json-server</a></p>
 <p>（6） MPA（多页面）应用的配置</p>
 <p><a href="https://cli.vuejs.org/zh/config/#pages" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#pages</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module.exports=&#123;</span><br><span class="line">    pages:&#123;</span><br><span class="line">    index:&#123;</span><br><span class="line">    </span><br><span class="line">    //page 的入口</span><br><span class="line">    </span><br><span class="line">    entry:&apos;src/index/main.js&apos;,</span><br><span class="line">    </span><br><span class="line">    // 模板来源</span><br><span class="line">    </span><br><span class="line">    template:&apos;public/index.html&apos;,</span><br><span class="line">    </span><br><span class="line">    // 在dist/index.html</span><br><span class="line">    filename：‘index.html’,</span><br><span class="line">    </span><br><span class="line">    //template 中的title标签需要是 &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">    title:&apos;Index Page&apos;,</span><br><span class="line">    // 在这个页面中包含的块，默认情况下会包含</span><br><span class="line">    // 提取出来的通用chunk 和 vendor   chunk</span><br><span class="line">    chunks:[&apos;chunk-vendors&apos;,&apos;chunk-common&apos;,&apos;index&apos;]</span><br><span class="line">    &#125;,</span><br><span class="line">    //当使用只有入口的字符串格式时，</span><br><span class="line">    // 模板会被推导为``public/kerwin`</span><br><span class="line">    </span><br><span class="line">    kerwin:&apos;src/kerwin/main.js&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">module.exports&#x3D;&#123;</span><br><span class="line">    pages:&#123;</span><br><span class="line">    index:&#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;page 的入口</span><br><span class="line">    </span><br><span class="line">    entry:&#39;src&#x2F;index&#x2F;main.js&#39;,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 模板来源</span><br><span class="line">    </span><br><span class="line">    template:&#39;public&#x2F;index.html&#39;,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 在dist&#x2F;index.html</span><br><span class="line">    filename：‘index.html’,</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;template 中的title标签需要是 &lt;title&gt;&lt;%&#x3D; htmlWebpackPlugin.options.title %&gt;&lt;&#x2F;title&gt;</span><br><span class="line">    </span><br><span class="line">    title:&#39;Index Page&#39;,</span><br><span class="line">    &#x2F;&#x2F; 在这个页面中包含的块，默认情况下会包含</span><br><span class="line">    &#x2F;&#x2F; 提取出来的通用chunk 和 vendor   chunk</span><br><span class="line">    chunks:[&#39;chunk-vendors&#39;,&#39;chunk-common&#39;,&#39;index&#39;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F;当使用只有入口的字符串格式时，</span><br><span class="line">    &#x2F;&#x2F; 模板会被推导为&#96;&#96;public&#x2F;kerwin&#96;</span><br><span class="line">    </span><br><span class="line">    kerwin:&#39;src&#x2F;kerwin&#x2F;main.js&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="利用vue-cli进行组件化开发"><a href="#利用vue-cli进行组件化开发" class="headerlink" title="利用vue-cli进行组件化开发"></a>利用vue-cli进行组件化开发</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" data-id="ck447t7bv0006p4nr1k9s9u7v"
+      <a data-url="http://yoursite.com/2019/12/13/vue%E7%9F%A5%E8%AF%86%E7%82%B9%E7%AE%80%E5%8D%95%E6%A2%B3%E7%90%86/" data-id="ck4s52dh80005wwnrh2q5gfo7"
          class="article-share-link">分享</a>
       
     </footer>
@@ -212,10 +218,19 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
     
   <nav class="article-nav">
     
+      <a href="/2019/12/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            数组去重方法
+          
+        </div>
+      </a>
     
-      <a href="/2019/11/28/%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-nav-link">
+    
+      <a href="/2019/12/03/git/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">知识点</div>
+        <div class="article-nav-title">git</div>
       </a>
     
   </nav>
@@ -226,9 +241,15 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
   
     
   <div class="gitalk" id="gitalk-container"></div>
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+  
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
   <script type="text/javascript">
     var gitalk = new Gitalk({
       clientID: '',
@@ -331,17 +352,29 @@ map()</code></pre><h3 id="5-事件处理"><a href="#5-事件处理" class="heade
 </div>
 </div>
   </aside>
-  <script src="/js/jquery-2.0.3.min.js"></script>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
 <script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
 <script src="/js/lazyload.min.js"></script>
+
+
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
 
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
 
 
 
 
 <script src="/js/ocean.js"></script>
+
 
 </body>
 </html>
